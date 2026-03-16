@@ -46,13 +46,29 @@ def is_subset(list_a, list_b):
 print(is_subset([1, 2], [1, 2, 3, 4]))
 
 def remove_dictionary_key(data, keys_to_remove):
-    return ''
+    return {key:value for key,value in data.items() if key!=keys_to_remove} if keys_to_remove in data else "Key not found"
+print(remove_dictionary_key({'a': 1, 'b': 2, 'c': 3}, 'z'))
 
 def invert_dictionary(data):
-    return ''
+    return {value:key for key,value in data.items()}
 
 def recursive_sum(n):
-    return ''
+    if n == 0:
+        return n
+    else:
+        rec = n + recursive_sum(n-1)
+    return rec
+print(recursive_sum(5))
+            
 
 def fibonacci_generator(n):
-    return ''
+    if n <1:
+        return []
+    if n == 1:
+        return [0]
+    if n == 2:
+        return [0,1]
+    fib = fibonacci_generator(n-1)
+    fib.append(fib[-1] + fib[-2])
+    return fib
+print(fibonacci_generator(5))
