@@ -39,7 +39,7 @@ def rotate_list(nums, k):
 print(rotate_list([1, 2], 3))
 
 def sort_emails_by_domain(emails):
-    return ''
+    return sorted(emails, key=lambda item:item.split('@')[-1])
 
 def is_subset(list_a, list_b):
     return True if set(list_a).issubset(set(list_b)) else False
