@@ -72,3 +72,10 @@ def fibonacci_generator(n):
     fib.append(fib[-1] + fib[-2])
     return fib
 print(fibonacci_generator(5))
+
+def fib_straight(n):
+    if n < 1:
+        return 0
+    if n == 1:
+        return 0
+    return fib_straight(n-1)+ fib_straight(n-2)
